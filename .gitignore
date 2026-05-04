@@ -27,4 +27,9 @@ yarn-error.log
 /.nova
 /.vscode
 /.zed
-/.phpstan/
+/.phpstan.cache
+.devenv/
+.devenv-index
+.direnv/
+php.local.ini
+caddy.local
