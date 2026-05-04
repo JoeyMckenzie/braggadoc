@@ -9,7 +9,7 @@ parameters:
         - public/index.php
         - bootstrap/app.php
         - bootstrap/providers.php
-    tmpDir: .phpstan
+    tmpDir: .phpstan.cache
     type_coverage:
         return: 100
         param: 100
