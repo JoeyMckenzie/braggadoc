@@ -1,0 +1,18 @@
+version: "0.5"
+
+processes:
+  npm:
+    command: "npm run dev"
+    availability:
+      restart: "always"
+
+  logs:
+    command: "php artisan pail --timeout=0"
+    availability:
+      restart: "always"
+
+  queue:
+    command: "php artisan queue:listen --tries=1 --timeout=0"
+    availability:
+      restart: "always"
+
