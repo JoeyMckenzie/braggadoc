@@ -6,6 +6,7 @@ use Rector\CodingStyle\Rector\Closure\StaticClosureRector;
 use Rector\Config\RectorConfig;
 use Rector\Php83\Rector\ClassMethod\AddOverrideAttributeToOverriddenMethodsRector;
 use Rector\TypeDeclaration\Rector\StmtsAwareInterface\DeclareStrictTypesRector;
+use RectorLaravel\Set\LaravelSetProvider;
 
 return RectorConfig::configure()
     ->withPaths([
@@ -23,6 +24,7 @@ return RectorConfig::configure()
         StaticClosureRector::class,
         DeclareStrictTypesRector::class,
     ])
+    ->withSetProviders(LaravelSetProvider::class)
     ->withPreparedSets(
         deadCode: true,
         codeQuality: true,
@@ -31,4 +33,5 @@ return RectorConfig::configure()
         privatization: true,
         earlyReturn: true,
     )
-    ->withPhpSets(php84: true);
+    ->withPhpSets(php84: true)
+    ->withComposerBased(laravel: true);
